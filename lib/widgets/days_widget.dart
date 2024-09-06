@@ -1,51 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:taskati_app/widgets/text_app_widget.dart';
 
 class DaysWidget extends StatelessWidget {
-  DaysWidget(
-      {super.key,
-      required this.title1,
-      required this.title2,
-      required this.title3,
-      required this.SizeText,
-      required this.color,
-      required this.colorInText});
-
-  String title1;
-  String title2;
-  String title3;
-  double SizeText;
-  Color color;
-  Color colorInText;
+  const DaysWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      // height: 120,
       width: 90,
+      margin:const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
-        color: color,
+        color: const Color(0xFF4e5ae8),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            title1,
-            style: TextStyle(color: colorInText, fontSize: SizeText),
+          TextAppWidget(
+            title: 'OCT',
+            color: Colors.white,
+            fontSize: 13,
           ),
           SizedBox(
             height: 10,
           ),
-          Text(
-            title2,
-            style: TextStyle(color: colorInText, fontSize: 28),
+          TextAppWidget(
+            title: '30',
+            color: Colors.white,
+            fontSize: 13,
           ),
           SizedBox(
             height: 10,
           ),
-          Text(
-            title3,
-            style: TextStyle(color: colorInText, fontSize: SizeText),
+          TextAppWidget(
+            title: 'MON',
+            color: Colors.white,
+            fontSize: 13,
           ),
         ],
       ),

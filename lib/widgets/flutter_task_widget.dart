@@ -1,21 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:taskati_app/widgets/text_app_widget.dart';
 
 class FlutterTaskWidget extends StatelessWidget {
-  FlutterTaskWidget({
+  const FlutterTaskWidget({
     super.key,
-    this.colorContainer,
-    required this.titleText,
-    required this.titleTime,
-    required this.colorText,
-    required this.sizeText,
   });
-final  String titleText;
-final  String titleTime;
-final  Color? colorContainer;
-final  Color colorText;
-  double sizeText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,20 +16,13 @@ final  Color colorText;
       width: double.infinity,
       margin: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
-        color: colorContainer,
+        color: const Color(0xff4e5ae8),
         borderRadius: BorderRadius.circular(13),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            //  'Flutter Task -1',
-            titleText,
-            style: TextStyle(
-              color: colorText,
-              fontSize: sizeText,
-            ),
-          ),
+          const TextAppWidget(title: 'Flutter Task -1', color: Colors.white),
           Expanded(
             child: Row(
               children: [
@@ -48,11 +33,8 @@ final  Color colorText;
                 const SizedBox(
                   width: 10,
                 ),
-                Text(
-                
-                  titleTime,
-                  style: TextStyle(color: colorText),
-                ),
+                const TextAppWidget(
+                    title: '02:25AM - 02:40 AM', color: Colors.white),
                 const Spacer(),
                 const SizedBox(
                   child: VerticalDivider(
@@ -62,7 +44,6 @@ final  Color colorText;
                 Transform.rotate(
                   angle: -pi / 2,
                   child: const Text(
-                  
                     'TODO',
                     style: TextStyle(
                       color: Colors.white,
@@ -73,13 +54,8 @@ final  Color colorText;
               ],
             ),
           ),
-          Text(
-            'i Will do This Task',
-            style: TextStyle(
-              color: colorText,
-              fontSize: sizeText,
-            ),
-          )
+          const TextAppWidget(
+              title: 'i Will do This Task', color: Colors.white),
         ],
       ),
     );
