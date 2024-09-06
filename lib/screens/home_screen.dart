@@ -5,6 +5,7 @@ import 'package:taskati_app/widgets/profile_named_widget.dart';
 import 'package:taskati_app/widgets/text_app_widget.dart';
 
 import '../widgets/elevated_button_widget.dart';
+import '../widgets/new_list_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -80,30 +81,11 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            FlutterTaskWidget(
-              titleText: 'Flutter Task -1',
-              titleTime: '02:25AM - 02:40 AM',
-              colorContainer: const Color(0xff4e5ae8),
-              colorText: Colors.white,
-              sizeText: 20,
-            ),
-            FlutterTaskWidget(
-              titleText: 'Flutter Task -2',
-              titleTime: '02:25AM - 02:40 AM',
-              colorContainer: const Color(0xffff4667),
-              colorText: Colors.white,
-              sizeText: 20,
-            ),
-            FlutterTaskWidget(
-              titleText: 'Flutter Task -3',
-              titleTime: '02:25AM - 02:40 AM',
-              colorContainer: const Color(0xffff9e69),
-              colorText: Colors.white,
-              sizeText: 20,
-            ),
+            NewListView(),
           ],
         ),
       ),
     );
   }
 }
+

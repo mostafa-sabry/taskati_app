@@ -11,17 +11,18 @@ class FlutterTaskWidget extends StatelessWidget {
     required this.colorText,
     required this.sizeText,
   });
-  String titleText;
-  String titleTime;
-  Color? colorContainer;
-  Color colorText;
+final  String titleText;
+final  String titleTime;
+final  Color? colorContainer;
+final  Color colorText;
   double sizeText;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       height: 130,
-      width: 390,
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
         color: colorContainer,
         borderRadius: BorderRadius.circular(13),
@@ -48,7 +49,7 @@ class FlutterTaskWidget extends StatelessWidget {
                   width: 10,
                 ),
                 Text(
-                  //'02:25AM - 02:40 AM',
+                
                   titleTime,
                   style: TextStyle(color: colorText),
                 ),
@@ -61,8 +62,8 @@ class FlutterTaskWidget extends StatelessWidget {
                 Transform.rotate(
                   angle: -pi / 2,
                   child: const Text(
-                    //titleText,
-                      'TODO',
+                  
+                    'TODO',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 11,
@@ -73,8 +74,7 @@ class FlutterTaskWidget extends StatelessWidget {
             ),
           ),
           Text(
-            
-              'i Will do This Task',
+            'i Will do This Task',
             style: TextStyle(
               color: colorText,
               fontSize: sizeText,
