@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskati_app/widgets/days_widget.dart';
 import 'package:taskati_app/widgets/profile_named_widget.dart';
 import 'package:taskati_app/widgets/text_app_widget.dart';
 
