@@ -9,7 +9,6 @@ class DaysWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 120,
       width: 90,
       margin:const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(

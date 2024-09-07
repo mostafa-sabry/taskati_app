@@ -14,13 +14,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ProfileNamed(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
-              child: Row(
+        body: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ProfileNamed(),
+              SizedBox(height: 20,),    
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextAppWidget(
@@ -28,16 +29,16 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButtonWidget(),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            SizedBox(
-              height: 100,
-              child: NewListViewDaysWidget(),
-            ),
-            NewListView(),
-          ],
+              SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                height: 100,
+                child: NewListViewDaysWidget(),
+              ),
+              NewListView(),
+            ],
+          ),
         ),
       ),
     );

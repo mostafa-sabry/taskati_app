@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskati_app/widgets/add_task_bottom_sheet.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
   const ElevatedButtonWidget({
@@ -15,7 +16,13 @@ class ElevatedButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return const AddTaskBottomSheet();
+            });
+      },
       child: const Text(
         '+ Add Task',
         style: TextStyle(color: Colors.white, fontSize: 15),
@@ -23,3 +30,5 @@ class ElevatedButtonWidget extends StatelessWidget {
     );
   }
 }
+
+
