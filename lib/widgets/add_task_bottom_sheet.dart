@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:taskati_app/add_taskati_cubit/cubit/add_taskati_cubit.dart';
 import 'package:taskati_app/widgets/add_task_custom_botton.dart';
 import 'package:taskati_app/widgets/custom_text_field_widget.dart';
 
@@ -7,10 +10,25 @@ class AddTaskBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: SingleChildScrollView(
-        child: AddTaskForm(),
+        child: BlocConsumer<AddTaskatiCubit, AddTaskatiState>(
+          listener: (context, state) {
+            if (state is AddTaskatiError) {
+              print('failed ${state.errorMessage}');
+            }
+
+            if (state is AddTaskatiSuccess) {
+              Navigator.pop(context);
+            }
+          },
+          builder: (context, state) {
+            return ModalProgressHUD(
+                inAsyncCall: state is AddTaskatiLoading ? true : false,
+                child: AddTaskForm());
+          },
+        ),
       ),
     );
   }
