@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 
+part 'task_model.g.dart';
 
 @HiveType(typeId: 0)
 class TaskModel extends HiveObject {
@@ -11,7 +12,6 @@ class TaskModel extends HiveObject {
   final String date;
   @HiveField(3)
   final int color;
-  
 
   TaskModel({
     required this.title,
@@ -19,5 +19,4 @@ class TaskModel extends HiveObject {
     required this.date,
     required this.color,
   });
-
 }
